@@ -1,0 +1,314 @@
+/* importações, seletor universal, body e dialogflow */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Itim&family=Parkinsans:wght@300..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-main {
+    background-color: transparent;
+    flex: 1 1;
+    min-height: 100vh;
+}
+  
+df-messenger {
+    --df-messenger-bot-message: #b0954a; /* Mensagem do bot com cor de destaque */
+    --df-messenger-button-titlebar-color: #111111; /* Fundo da barra de título escuro */
+    --df-messenger-button-titlebar-font-color: #F5F5F5; /* Texto do título em branco suave */
+    --df-messenger-chat-background-color: #1E1E1E; /* Fundo do chat levemente mais claro */
+    --df-messenger-font-color: #FFFFFF; /* Texto em branco para melhor legibilidade */
+    --df-messenger-send-icon: #a58d49; /* Ícone de envio com cor de destaque */
+    --df-messenger-user-message: #333333; /* Mensagem do usuário com contraste suave */
+    --df-messenger-chat-title-color: #F5F5F5; /* Cor do título do chat em branco suave */
+}
+
+
+
+/* header */
+
+.header {
+    font-family: "Itim", cursive;
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#logo {
+    width: 70px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    display: flex;
+    margin: 0 10px;
+    align-items: center;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#btn-instagram {
+    display: flex;
+    font-size: 19px;
+    transition: 0.35s;
+}
+
+#btn-instagram:hover {
+    color: #d4d4d4;
+}
+
+.nav ul li a::after {
+    margin: 3px 0;
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.35s;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+#current-page {
+    color: #C0AB70;
+}
+
+#current-page::after {
+    width: 100%;
+    background-color: #C0AB70;
+}
+
+.hm-sec {
+    background-image: url(img/cafe2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    height: 105vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1 {
+    animation: tt-op-lf 2s ease;
+    font-family: "Itim", cursive;
+    color: #fff;
+    font-size: 49px;
+    text-align: center;
+    max-width: 650px;
+}
+
+.title h1 span {
+    color: #C0AB70;
+}
+
+#bigspan {
+    font-size: 55px;
+}
+
+.btn-loc {
+    text-decoration: none;
+    animation: btn-op-rg 2s ease;
+    font-family: "Itim", cursive;
+    margin-top: 5vw;
+    border: 2px solid #C0AB70;
+    padding: 10px 5vh;
+    border-radius: 18px;
+    color: #C0AB70;
+    font-size: 17px;
+    background-color: transparent;
+    transition: 0.25s ease-out;
+    cursor: pointer;
+
+    i {
+        margin-right: 1vh;
+    }
+}
+
+.btn-loc:hover {
+    background-color: #C0AB70;
+    color: #fff;
+}
+
+.btn-bottom {
+    position: absolute;
+    bottom: -7%;
+    animation: btn-inf 3s ease;
+    animation-iteration-count: infinite;
+    display: flex;
+    width: 7vh;
+    height: 7vh;
+    border: none;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #c43c3c, #fa4c4c);
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-bottom:hover {
+    background-image: linear-gradient(to right, #fa4c4c, #c43c3c);
+}
+
+/* responsividade do header */
+
+@media screen and (max-width: 769px) {
+    .footer {
+        margin-bottom: 81px;
+    }
+
+    .nav ul {
+        display: flex;
+        background-color: #c0c0c00c;
+        backdrop-filter: blur(30px);
+        position: fixed;
+        bottom: 0;
+        border-radius: 15px;
+        width: 95%;
+        height: 11vh;
+        justify-content: space-around;
+        margin: 15px;
+        z-index: 10;
+    }
+
+    #btn-instagram {
+        display: flex;
+        background-color: #C0AB70;
+        width: 35px;
+        height: 35px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .nav ul li a {
+        display: flex;
+
+        font-size: 17px;
+    }
+
+    .nav ul li a::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    #btn-instagram,
+    #btn-li {
+        position: absolute;
+        left: 50%;
+        top: -30%;
+        transform: translate(-70%, -10%);
+        box-shadow: 0px 5px 15px #0000005e;
+    }
+}
+
+/* animação */
+
+@keyframes tt-op-lf {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes btn-op-rg {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes btn-inf {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* fim do header */
+
+/*css do footer*/
+footer {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    background-color: #111010;
+    color: #fafafa;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    img {
+        width: 60px;
+    }
+    p {
+        text-align: center;
+        color: #fff;
+    }
+    #botoes {
+        display: flex;
+    }
+    #botoes .btn-return {
+        border: 2px solid #c0ab70;
+        display: flex;
+        color: #c0ab70;
+        padding: 8px;
+        border-radius: 6px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.33s;
+        align-items: center;
+    }#botoes .btn-return i {
+        margin-right: 6px;
+    }
+    #botoes .btn-return:hover {
+        background-color: #c0ab70;
+        color: #fafafa;
+    }
+
+}
