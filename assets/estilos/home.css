@@ -1,0 +1,156 @@
+.ambiente-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.ambiente-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #C0AB70;
+}
+
+.ambiente-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Para lidar com telas menores */
+}
+
+.ambiente-iframe {
+    flex: 1 1 100%;
+    /* Ocupa 100% da largura em telas menores */
+    max-width: 600px;
+    /* Tamanho máximo do iframe */
+    margin: 0 auto;
+    /* Centraliza o iframe */
+}
+
+.ambiente-gallery {
+    display: flex;
+    flex: 1 1 100%;
+    /* Ocupa 100% da largura em telas menores */
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ambiente-gallery img {
+    flex: 1 1 calc(25% - 10px);
+    /* Cada imagem ocupa 25% da largura no desktop */
+    max-width: 280px;
+    /* Tamanho máximo no desktop */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    /* Garante que a imagem não distorça */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .ambiente-gallery img {
+        flex: 1 1 calc(33.333% - 10px);
+        /* Reduz para 33% da largura */
+        max-width: 250px;
+        /* Tamanho máximo reduzido */
+    }
+}
+
+@media (max-width: 768px) {
+    .ambiente-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ambiente-gallery img {
+        flex: 1 1 calc(50% - 10px);
+        /* Ocupa 50% da largura */
+        max-width: 230px;
+        /* Tamanho máximo menor */
+    }
+}
+
+@media (max-width: 480px) {
+    .ambiente-gallery img {
+        flex: 1 1 calc(100% - 10px);
+        /* Ocupa 100% da largura */
+        max-width: 100%;
+        /* Ocupa toda a largura da tela */
+    }
+}
+
+/* SLIDE */
+.slider-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.slider-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #C0AB70;
+}
+
+.swiper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Ajustes no estilo dos slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do slide */
+}
+
+.swiper-slide img {
+    width: 100%;
+    max-width: 320px; /* Mantém a largura máxima */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+/* Aumenta a escala do slide ativo */
+.swiper-slide.swiper-slide-active img {
+    transform: scale(1); /* Aumenta a escala do slide ativo */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+    z-index: 2;
+}
+
+/* Reduz a opacidade dos slides secundários e diminui a escala */
+.swiper-slide:not(.swiper-slide-active) img {
+    opacity: 0.6; /* Mantém a opacidade reduzida */
+    transform: scale(0.8); /* Reduz a escala dos slides secundários */
+}
+
+/* Estilo dos pontos de navegação */
+.swiper-pagination {
+    position: absolute;
+    bottom: 120px; /* Ajuste a posição dos pontos de navegação */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* Estilo para os pontos de navegação */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc; /* Cor dos pontos inativos */
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo quando o ponto está ativo (indicando o slide atual) */
+.swiper-pagination-bullet-active {
+    background-color: #007bff; /* Cor dos pontos ativos */
+    transform: scale(1.3); /* Aumenta o tamanho do ponto ativo */
+}
